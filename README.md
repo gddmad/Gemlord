@@ -17,11 +17,11 @@ NOT NEAR COMPLETION
   4805: gem's index(1 to 14)
 
 # How To See It In The Game
-1. Make sure that the .txt file is inside the LEVELS folder
+1. Make sure that the .txt file is inside the LEVELS folder<br>
 1.5. Make sure that the paths in the .bas are in the view of the .exe because you will get an error otherwise 
 2. For now, change the variable LVLNAME to the name of the .txt file
 
-What needs to be done:
+# What needs to be done:
 <ul><li>
 Create more levels to hide more gems.
 </li><li>
