@@ -21,7 +21,7 @@ NOT NEAR COMPLETION
 1.5. Make sure that the paths in the .bas are in the view of the .exe because you will get an error otherwise 
 2. For now, change the variable LVLNAME to the name of the .txt file
 
-What needs to be done:
+# What needs to be done:
 <ul><li>
 Create more levels to hide more gems.
 </li><li>
