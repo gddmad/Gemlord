@@ -1,5 +1,5 @@
 _TITLE "Gemlord"
-'_FULLSCREEN
+_FULLSCREEN
 
 COLS = 80
 ROWS = 20
