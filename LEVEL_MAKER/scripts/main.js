@@ -1,4 +1,7 @@
-const COLOR = ["82A8A8","002FA8","005200","009882","7D0000","A800A8","A85400","A8A8A8","474747","5E5EFC","52F752","54FCFC","FC5454","FC54FC","FCFC54","808080"];
+const COLOR = [
+  "82A8A8","002FA8","005200","009882","7D0000","A800A8","A85400","A8A8A8","474747","5E5EFC","52F752","54FCFC","FC5454","FC54FC","FCFC54","808080",
+  "82A8A8","002FA8","005200","009882","7D0000","A800A8","A85400","A8A8A8","474747","5E5EFC","52F752","54FCFC","FC5454","FC54FC","FCFC54","808080"
+];
 
 let DATA = [];
 for (let y = 0; y < 20; y++) {
@@ -78,8 +81,22 @@ function renderData() {
   let parent = document.getElementById("screen-container");
   parent.innerHTML = "";
   let tb = document.createElement("table");
+
+  let tr = document.createElement("tr");
+  for (let i = 0; i < DATA[0].length; i++) {
+    let td = document.createElement("td");
+    td.innerHTML = i;
+    td.style.border = "1px solid black";
+    tr.appendChild(td);
+  }
+  tb.appendChild(tr);
+
   for (let y = 0; y < DATA.length; y++) {
     let tr = document.createElement("tr");
+    let td = document.createElement("td");
+    td.style.border = "1px solid black";
+    td.innerHTML = y + 1;
+    tr.appendChild(td);
     for (let x = 0; x < DATA[y].length; x++) {
       let td = document.createElement("td");
       td.style.border = "1px solid black";
@@ -108,7 +125,7 @@ function createPopup(x, y) {
 
   let h1 = document.createElement("h1");
   h1.id = "popup-title";
-  h1.innerHTML = x + "," + y;
+  h1.innerHTML = (x + 1) + ", " + (y + 1);
 
   let char = document.createElement("input");
   char.id = "popup-char-input";
@@ -138,7 +155,7 @@ function createPopup(x, y) {
   submit.innerHTML = "submit";
   submit.onclick = () => {
     let pos = document.getElementById("popup-title").innerHTML.split(",");
-    setCell(pos[0], pos[1], {
+    setCell(pos[0] - 1, pos[1] - 1, {
       code: Number(document.getElementById("popup-char-input").value),
       solid: document.getElementById("popup-sol-input").checked,
       color: Number(document.getElementById("popup-col-input").options[document.getElementById("popup-col-input").selectedIndex].value)
